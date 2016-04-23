@@ -19,4 +19,4 @@ This app should allow the hunters to navigate without having to remove their glo
 
 * http://www.ncdc.noaa.gov/cdo-web/api/v2
 * http://feeder.gina.alaska.edu/radar-uaf-barrow-seaice-images/
-* LINK
+* http://polarportal.dk/forsiden/
