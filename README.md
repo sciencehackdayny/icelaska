@@ -1,5 +1,5 @@
 # icelaska
-[project] team "mean girls" prototyping project 
+[project] team "mean girls" prototyping solutions for alaskan hunters
 
 
 ## TEAM MEMBERS
