@@ -1,0 +1,70 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.sciencehackdayny.icelaska"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "com.sciencehackdayny.icelaska"
+        },
+        "cordova-plugin-shake": {
+            "PACKAGE_NAME": "com.sciencehackdayny.icelaska"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.sciencehackdayny.icelaska"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.sciencehackdayny.icelaska"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.sciencehackdayny.icelaska"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "file": "plugins/cordova-plugin-device-motion/www/Acceleration.js",
+            "id": "cordova-plugin-device-motion.Acceleration",
+            "pluginId": "cordova-plugin-device-motion",
+            "clobbers": [
+                "Acceleration"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-device-motion/www/accelerometer.js",
+            "id": "cordova-plugin-device-motion.accelerometer",
+            "pluginId": "cordova-plugin-device-motion",
+            "clobbers": [
+                "navigator.accelerometer"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-device-motion/src/browser/AccelerometerProxy.js",
+            "id": "cordova-plugin-device-motion.AccelerometerProxy",
+            "pluginId": "cordova-plugin-device-motion",
+            "runs": true
+        },
+        {
+            "file": "plugins/cordova-plugin-shake/www/shake.js",
+            "id": "cordova-plugin-shake.Shake",
+            "pluginId": "cordova-plugin-shake",
+            "clobbers": [
+                "shake"
+            ]
+        }
+    ],
+    "plugin_metadata": {
+        "cordova-plugin-whitelist": "1.2.2",
+        "cordova-plugin-device-motion": "1.2.1",
+        "cordova-plugin-shake": "0.5.4",
+        "cordova-plugin-compat": "1.0.0",
+        "cordova-plugin-geolocation": "2.2.0",
+        "cordova-plugin-console": "1.0.3"
+    }
+}
