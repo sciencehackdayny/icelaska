@@ -30,6 +30,9 @@
         },
         "cordova-plugin-network-information": {
             "PACKAGE_NAME": "com.sciencehackdayny.icelaska"
+        },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "com.sciencehackdayny.icelaska"
         }
     },
     "dependent_plugins": {

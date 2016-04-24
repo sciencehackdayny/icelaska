@@ -34,27 +34,26 @@
         <title>Icelaska</title>
     </head>
     <body>
-        <div>&nbsp;</div>
-        <div class="row">
-          <div class="col-sm-2"></div>
-          <div class="col-sm-8">
-            <div id="panel1" class="card card-block centered">
-                <h3 class="card-title">Location</h3>
+        <div>
+          <div>
+            <div id="panel-1" class="card card-block centered text-xs-center">
+                <h3 class="card-header">Location</h3>
                 <p class="card-text">
+                    <h1 id="compass">N/A</h1>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><strong>Latitude&nbsp;</strong><span id="latitude">N/A</span></li>
-                        <li class="list-group-item"><strong>Longitude&nbsp;</strong><span id="longitude">N/A</span></li>
+                        <li class="list-group-item">[<span id="latitude">N/A</span>,<span id="longitude">N/A</span>]</li>
                      </ul>
                 </p>
             </div>
 
-            <div id="panel2" class="card card-block centered">
-                <h3 class="card-title">Weather</h3>
+            <div id="panel-2" class="card card-block centered">
+                <h3 class="card-header">Weather</h3>
                 <p class="card-text">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item"><strong>Temperature&nbsp;</strong><span id="temp">N/A</span>&nbsp;(<span id="temp_min"></span>&nbsp;-&nbsp;<span id="temp_max"></span>)</li>
                         <li class="list-group-item"><strong>Condition&nbsp;</strong><span id="condition">N/A</span></li>
                         <li class="list-group-item"><strong>Pressure&nbsp;</strong><span id="pressure">N/A</span></li>
+                        <li class="list-group-item"><strong>Humidity&nbsp;</strong><span id="humidity">N/A</span></li>
                         <li class="list-group-item"><strong>Visibility&nbsp;</strong><span id="visibility">N/A</span></li>
                         <li class="list-group-item"><strong>Wind&nbsp;</strong><span id="wind_speed">N/A</span>&nbsp;<span id="wind_deg"></span></li>
                         <li class="list-group-item"><strong>Sunrise&nbsp;</strong><span id="sunrise">N/A</span></li>
@@ -63,25 +62,24 @@
                 </p>
             </div>
 
-            <div id="panel3" class="card card-block centered">
-                <h3 class="card-title">Sea Ice Conditions</h3>
+            <div id="panel-3" class="card card-block centered">
+                <h3 class="card-header">Sea Ice Conditions</h3>
                 <p class="card-text">
                     <h4>Current Radar</h4>
                     <img src="img/sample_radar.png" style="width: 300px;" />
                 </p>
             </div>
 
-            <div id="panel4" class="card card-block centered">
-                <h3 class="card-title">Location Tagging</h3>
+            <div id="panel-4" class="card card-block centered">
+                <h3 class="card-header">Location Tagging</h3>
                 <p class="card-text"><br />
-                    <button type="button" class="btn btn-danger btn-lg btn-block">Danger</button>
-                    <button type="button" class="btn btn-warning btn-lg btn-block">Warning</button>
-                    <button type="button" class="btn btn-success btn-lg btn-block">Safe</button>
+                    <button id="danger_position" type="button" class="btn btn-danger btn-lg btn-block">Danger</button>
+                    <button id="warning_position" type="button" class="btn btn-warning btn-lg btn-block">Warning</button>
+                    <button id="safe_position" type="button" class="btn btn-success btn-lg btn-block">Safe</button>
                 </p>
             </div>
 
           </div>
-          <div class="col-sm-2"></div>
         </div>
 
 

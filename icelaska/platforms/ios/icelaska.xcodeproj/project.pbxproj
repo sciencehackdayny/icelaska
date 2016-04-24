@@ -30,6 +30,7 @@
 		10E5CB36E425416E813B7C4B /* CDVReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D49835834E941F3B6862B3D /* CDVReachability.m */; };
 		5B59312DC9A744FEBCADCEB6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F695734AD6443F49F0CB401 /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		04B4FEC905334C8EB389920F /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87BB3C34EE1F4DA6AE8B4180 /* CoreTelephony.framework */; };
+		5395F025956D4146B02B4C84 /* CDVCompass.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D516DE589D542DCA87A01C8 /* CDVCompass.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,8 @@
 		1564EF5F3ABC4CB2A798E9A9 /* CDVReachability.h */ = {isa = PBXFileReference; name = "CDVReachability.h"; path = "cordova-plugin-network-information/CDVReachability.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		2F695734AD6443F49F0CB401 /* SystemConfiguration.framework */ = {isa = PBXFileReference; name = "SystemConfiguration.framework"; path = "System/Library/Frameworks/SystemConfiguration.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		87BB3C34EE1F4DA6AE8B4180 /* CoreTelephony.framework */ = {isa = PBXFileReference; name = "CoreTelephony.framework"; path = "System/Library/Frameworks/CoreTelephony.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		1D516DE589D542DCA87A01C8 /* CDVCompass.m */ = {isa = PBXFileReference; name = "CDVCompass.m"; path = "cordova-plugin-device-orientation/CDVCompass.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		99A24DC0DB3A4076958C5169 /* CDVCompass.h */ = {isa = PBXFileReference; name = "CDVCompass.h"; path = "cordova-plugin-device-orientation/CDVCompass.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +229,8 @@
 				4D49835834E941F3B6862B3D /* CDVReachability.m */,
 				74D22829308F483499670892 /* CDVConnection.h */,
 				1564EF5F3ABC4CB2A798E9A9 /* CDVReachability.h */,
+				1D516DE589D542DCA87A01C8 /* CDVCompass.m */,
+				99A24DC0DB3A4076958C5169 /* CDVCompass.h */,
 			);
 			name = Plugins;
 			path = icelaska/Plugins;
@@ -358,6 +363,7 @@
 				D5203201C5DD4C79B6BD1318 /* SQLitePlugin.m in Sources */,
 				DF42383E2FF343479FDE99C7 /* CDVConnection.m in Sources */,
 				10E5CB36E425416E813B7C4B /* CDVReachability.m in Sources */,
+				5395F025956D4146B02B4C84 /* CDVCompass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
