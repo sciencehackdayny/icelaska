@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MongoConfiguration">
+    <option name="serverConfigurations">
+      <list>
+        <ServerConfiguration>
+          <option name="label" value="icelaska" />
+          <option name="password" value="jkasa" />
+          <option name="serverUrls">
+            <list>
+              <option value="ds023500.mlab.com:23500" />
+            </list>
+          </option>
+          <option name="userDatabase" value="icelaska" />
+          <option name="username" value="jkasa" />
+        </ServerConfiguration>
+      </list>
+    </option>
+    <option name="shellPath" value="C:\Tools\Databases\MongoDB\bin\mongod.exe" />
+  </component>
+</project>

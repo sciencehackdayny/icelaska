@@ -23,6 +23,9 @@ public final class JsonReceiver {
     private static JsonReceiver receiver = null;
     private static URL url = null;
     private static final String USER_AGENT = "Icelaska";
+    private String key = null;
+
+
 
     /**
      * Private Constructor
@@ -51,6 +54,10 @@ public final class JsonReceiver {
         this.url = url;
     }
 
+    public void setKey(String key){
+        this.key = key; //"GrdEtYCFlGGKPnVUdmHOcAwjIyfiQUCS"
+    }
+
     public Object executeGETCall() throws JSONException {
         Object json = null;
         HttpURLConnection httpURLConnection = null;
@@ -68,7 +75,9 @@ public final class JsonReceiver {
 
             //add request header
             httpURLConnection.setRequestProperty("User-Agent", USER_AGENT);
-            httpURLConnection.setRequestProperty("token", "GrdEtYCFlGGKPnVUdmHOcAwjIyfiQUCS");
+            if(key!=null){
+                httpURLConnection.setRequestProperty("token", key);
+            }
 
             int responseCode = httpURLConnection.getResponseCode();
             System.out.println("\nSending 'GET' request to URL : " + url);
