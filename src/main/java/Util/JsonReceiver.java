@@ -24,9 +24,16 @@ public final class JsonReceiver {
     private static URL url = null;
     private static final String USER_AGENT = "Icelaska";
 
+    /**
+     * Private Constructor
+     */
     private JsonReceiver(){
     }
 
+    /**
+     * Static method for getting JsonReceiver object
+     * @return JsonReceiver
+     */
     public static JsonReceiver getReceiver(){
         if(receiver == null){
             receiver = new JsonReceiver();
@@ -34,6 +41,12 @@ public final class JsonReceiver {
         return receiver;
     }
 
+    /**
+     * Method for setting the url for the receiver.
+     *
+     * @param url
+     * @throws MalformedURLException
+     */
     public void setUrl(URL url) throws MalformedURLException {
         this.url = url;
     }
