@@ -21,6 +21,15 @@
         },
         "cordova-plugin-console": {
             "PACKAGE_NAME": "com.sciencehackdayny.icelaska"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.sciencehackdayny.icelaska"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "com.sciencehackdayny.icelaska"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.sciencehackdayny.icelaska"
         }
     },
     "dependent_plugins": {
