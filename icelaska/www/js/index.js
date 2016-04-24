@@ -10,7 +10,10 @@ var app = {
         navigator.geolocation.getCurrentPosition(locationDetected);
         var watchGPS = navigator.geolocation.watchPosition(locationUpdated);
         var watchCompass = navigator.compass.watchHeading(compassSuccess);
-        shake.startWatch(onShake);
+        //var watchAcceleration = navigator.accelerometer.watchAcceleration(accelerometerSuccess, null, {frequency: 1000});
+        shake.startWatch(onShake, 20);
+
+        initPanels();
     }
 };
 
@@ -19,6 +22,7 @@ app.initialize();
 var locationDetected = function(position) {
     updateCoords(position);
     getWeather(latitude, longitude);
+    updateWeatherDisplay();
 };
 
 var locationUpdated = function(position){
@@ -29,25 +33,80 @@ var compassSuccess = function(heading){
     $('#compass').text(degToCard(heading.magneticHeading));
 }
 
+/* var accelerometerSuccess = function(acceleration){
+   console.log('Acceleration X: ' + acceleration.x + '\n' +
+          'Acceleration Y: ' + acceleration.y + '\n' +
+          'Acceleration Z: ' + acceleration.z + '\n' +
+          'Timestamp: '      + acceleration.timestamp + '\n'); 
+
+    if (acceleration.y < -1){
+        console.log("up");
+        window.scrollBy(9,scrolly*100);
+    }
+
+    if (acceleration.y > 9){
+        console.log("down");
+        window.scrollBy(0,scrolly*20);
+    }
+} */
+
 var onShake = function () {
-  console.log("Shake detected.");
+    console.log("Shake detected.");
+    switchPanel();
 };
+
+function initPanels(){
+    $('#panel-1').show();
+    $('#panel-2').hide();
+    $('#panel-3').hide();
+}
+
+function switchPanel(){
+    if($('#panel-1').is(':visible')){
+        $('#panel-1').slideUp();
+        $('#panel-2').show();
+    }else if($('#panel-2').is(':visible')){
+        $('#panel-2').slideUp();
+        $('#panel-3').show();
+    }else if($('#panel-3').is(':visible')){
+        $('#panel-3').slideUp();
+        $('#panel-1').show();
+    }else{
+        initPanels();
+    }
+}
 
 function getWeather(latitude, longitude){
     console.log('Fetching weather...');
     $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&appid=e00d6166d5a2cc7acd31371ca9c2b0f9&units=imperial",function(result){
-    $('#temp').text(result.main.temp + " F");
-    $('#temp_min').text(result.main.temp_min + " F");
-    $('#temp_max').text(result.main.temp_max + " F");
-    $('#condition').text(result.weather[0].description);
-    $('#pressure').text(result.main.pressure + " hPa");
-    $('#humidity').text(result.main.humidity + "%")
-    $('#visibility').text(result.visibility);
-    $('#wind_speed').text(result.wind.speed + " mph");
-    $('#wind_deg').text(degToCard(result.wind.deg));
-    $('#sunrise').text(epochToJsDate(result.sys.sunrise));
-    $('#sunset').text(epochToJsDate(results.sys.sunset));
+    var storage = window.localStorage;
+    storage.setItem('temp', result.main.temp);
+    storage.setItem('temp_min', result.main.temp_min);
+    storage.setItem('temp_max', result.main.temp_max);
+    storage.setItem('condition', result.weather[0].description);
+    storage.setItem('pressure', result.main.pressure);
+    storage.setItem('humidity', result.main.humidity);
+    storage.setItem('visibility', result.visibility);
+    storage.setItem('wind_speed', result.wind.speed);
+    storage.setItem('wind_deg', result.wind.deg);
+    storage.setItem('sunrise', result.sys.sunrise);
+    storage.setItem('sunset', result.sys.sunset);
     });
+}
+
+function updateWeatherDisplay(){
+    var storage = window.localStorage;
+    $('#temp').text(storage.getItem("temp") + " F");
+    $('#temp_min').text(storage.getItem("temp_min") + " F");
+    $('#temp_max').text(storage.getItem("temp_max") + " F");
+    $('#condition').text(storage.getItem("condition"));
+    $('#pressure').text(storage.getItem("pressure") + " hPa");
+    $('#humidity').text(storage.getItem("humidity") + "%")
+    $('#visibility').text(storage.getItem("visibility"));
+    $('#wind_speed').text(storage.getItem("wind_speed") + " mph");
+    $('#wind_deg').text(degToCard(storage.getItem("wind_deg")));
+    $('#sunrise').text(epochToJsDate(storage.getItem("sunrise")));
+    $('#sunset').text(epochToJsDate(storage.getItem("sunset")));
 }
 
 function updateCoords(position){

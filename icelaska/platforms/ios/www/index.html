@@ -36,17 +36,23 @@
     <body>
         <div>
           <div>
-            <div id="panel-1" class="card card-block centered text-xs-center">
+            <div id="panel-1" class="card card-block centered text-xs-center panel">
                 <h3 class="card-header">Location</h3>
                 <p class="card-text">
                     <h1 id="compass">N/A</h1>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">[<span id="latitude">N/A</span>,<span id="longitude">N/A</span>]</li>
+                        <li class="list-group-item">
+                            <strong>TAG LOCATION</strong>
+                            <button id="danger_position" type="button" class="btn btn-danger btn-lg btn-block">Danger</button>
+                            <button id="warning_position" type="button" class="btn btn-warning btn-lg btn-block">Warning</button>
+                            <button id="safe_position" type="button" class="btn btn-success btn-lg btn-block">Safe</button>
+                        </li>
                      </ul>
                 </p>
             </div>
 
-            <div id="panel-2" class="card card-block centered">
+            <div id="panel-2" class="card card-block centered panel">
                 <h3 class="card-header">Weather</h3>
                 <p class="card-text">
                     <ul class="list-group list-group-flush">
@@ -62,7 +68,7 @@
                 </p>
             </div>
 
-            <div id="panel-3" class="card card-block centered">
+            <div id="panel-3" class="card card-block centered text-xs-center panel">
                 <h3 class="card-header">Sea Ice Conditions</h3>
                 <p class="card-text">
                     <h4>Current Radar</h4>
@@ -70,14 +76,6 @@
                 </p>
             </div>
 
-            <div id="panel-4" class="card card-block centered">
-                <h3 class="card-header">Location Tagging</h3>
-                <p class="card-text"><br />
-                    <button id="danger_position" type="button" class="btn btn-danger btn-lg btn-block">Danger</button>
-                    <button id="warning_position" type="button" class="btn btn-warning btn-lg btn-block">Warning</button>
-                    <button id="safe_position" type="button" class="btn btn-success btn-lg btn-block">Safe</button>
-                </p>
-            </div>
 
           </div>
         </div>
