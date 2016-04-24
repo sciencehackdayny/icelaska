@@ -1,4 +1,4 @@
-package extData;
+package Control.extData;
 
 
 import java.awt.image.RenderedImage;
@@ -82,7 +82,7 @@ public class LoadImages {
      * Method for loading image into data/img directory
      */
     private void getImage(URL urlObj, String img) throws IOException {
-        RenderedImage image = null;
+        //RenderedImage image = null;
 
         System.out.println(urlObj.getPath());
 

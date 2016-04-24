@@ -1,4 +1,4 @@
-import extData.LoadImages;
+import Control.extData.LoadImages;
 
 /**
  * @author Jaya Kasa

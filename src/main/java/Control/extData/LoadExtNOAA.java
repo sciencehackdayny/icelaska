@@ -1,4 +1,4 @@
-package extData;
+package Control.extData;
 
 import Util.JsonReceiver;
 import org.json.JSONException;

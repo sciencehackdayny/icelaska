@@ -1,4 +1,4 @@
-package extData;
+package Control.extData;
 
 /**
  * @author Jaya Kasa
