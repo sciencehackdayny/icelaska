@@ -4,6 +4,7 @@ package extData;
  * @author Jaya Kasa
  * @verion 1.0
  */
+@Deprecated
 public interface NOAACommands {
     String datasets = "/datasets";
     String datacategories = "/datacategories";

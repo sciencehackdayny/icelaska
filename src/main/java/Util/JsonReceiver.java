@@ -17,12 +17,12 @@ import java.net.URL;
  * Will mark the modifications for later reusability
  *
  * @author Jaya Kasa
- * @version 1.1
+ * @version 1.2
  */
 public final class JsonReceiver {
     private static JsonReceiver receiver = null;
     private static URL url = null;
-    private static final String USER_AGENT = "IceKemosabe";
+    private static final String USER_AGENT = "Icelaska";
 
     private JsonReceiver(){
     }
@@ -55,6 +55,7 @@ public final class JsonReceiver {
 
             //add request header
             httpURLConnection.setRequestProperty("User-Agent", USER_AGENT);
+            httpURLConnection.setRequestProperty("token", "GrdEtYCFlGGKPnVUdmHOcAwjIyfiQUCS");
 
             int responseCode = httpURLConnection.getResponseCode();
             System.out.println("\nSending 'GET' request to URL : " + url);
@@ -62,10 +63,10 @@ public final class JsonReceiver {
 
             BufferedReader in = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()));
 
-            if(!url.getHost().equals(httpURLConnection.getURL().getHost())){
+            //if(!url.getHost().equals(httpURLConnection.getURL().getHost())){
                 //the user has to sign into his current network before proceeding
                 //TODO handle redirection by network
-            }
+            //}
 
             String inputLine;
             StringBuffer response = new StringBuffer();

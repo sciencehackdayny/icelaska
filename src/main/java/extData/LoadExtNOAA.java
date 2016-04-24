@@ -10,6 +10,7 @@ import java.net.URL;
  * @author Jaya Kasa
  * @verion 1.0
  */
+@Deprecated
 public class LoadExtNOAA {
     String url = "http://www.ncdc.noaa.gov/cdo-web/api/v2";
     private URL urlObj = null;
