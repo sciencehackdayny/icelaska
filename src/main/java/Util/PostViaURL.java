@@ -17,35 +17,30 @@ public class PostViaURL {
     private String urlString = null;
     private String query = null;
     private HttpURLConnection httpURLConnection = null;
-    //private final String USER_AGENT = "Icelaska";
+    private final String USER_AGENT = "Icelaska";
     //private byte[] postData = null;
     //private int postDataLength;
 
-    public PostViaURL(String url, String query) throws MalformedURLException {
-        this.urlString = url;
-        this.query = query;
-        //this.url = new URL(url + query);
-        //System.out.println("\t" + url + query);
+    public PostViaURL(URL url) throws IOException {
+        this.url = url;
+        httpURLConnection = (HttpURLConnection) this.url.openConnection();
+        httpURLConnection.setDoInput(true);
+        httpURLConnection.setDoOutput(true);
+        httpURLConnection.setRequestProperty("Content-Type", "text/plain; charset=\"utf8\"");
+    }
+
+    public void setRequestMethod(String method) throws ProtocolException {
+        httpURLConnection.setRequestMethod(method);
+    }
+
+    public void setProperty(String key, String value){
+        httpURLConnection.setRequestProperty(key, value);
     }
 
     public void postData(){
         try {
             //TODO issue posting coordinates to carto
-            //String urlParameters  = "param1=a&param2=b&param3=c";
-            byte[] postData = query.getBytes(StandardCharsets.UTF_8);
-            int postDataLength = postData.length;
-            URL url = new URL(urlString);
-            httpURLConnection = (HttpURLConnection) url.openConnection();
-            httpURLConnection.setDoOutput( true );
-            httpURLConnection.setInstanceFollowRedirects( false );
-            httpURLConnection.setRequestMethod( "POST" );
-            httpURLConnection.setRequestProperty( "Content-Type", "application/x-www-form-urlencoded");
-            httpURLConnection.setRequestProperty( "charset", "utf-8");
-            httpURLConnection.setRequestProperty( "Content-Length", Integer.toString( postDataLength ));
-            httpURLConnection.setUseCaches( false );
-            try(DataOutputStream wr = new DataOutputStream(httpURLConnection.getOutputStream())) {
-                wr.write(postData);
-            }
+            OutputStream outputStream = httpURLConnection.getOutputStream();
 
             int responseCode = httpURLConnection.getResponseCode();
             System.out.println("\nSending 'POST' request to URL : " + url);

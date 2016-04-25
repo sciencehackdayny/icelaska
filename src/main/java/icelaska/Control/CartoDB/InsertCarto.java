@@ -1,6 +1,9 @@
 package icelaska.Control.CartoDB;
 
 import Util.PostViaURL;
+import com.cartodb.CartoDBClientIF;
+import com.cartodb.CartoDBException;
+import com.cartodb.impl.ApiKeyCartoDBClient;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -19,7 +22,6 @@ public class InsertCarto {
     private String date = ", NOW(), ";
     private String location = "ST_SetSRID(ST_Point(";
     private String terminal = "),4326))";
-    private String api = "&api_key=";
     private String key = "7e8d8026db79882178dab9b026a6022f67fb282e";
     private URL url = null;
     private HttpURLConnection httpURLConnection = null;
@@ -28,21 +30,19 @@ public class InsertCarto {
     public InsertCarto(){
     }
 
-    public void insertCarto(int danger, float lon,float lat)throws IllegalArgumentException{
+    public void insertCarto(int danger, String longitude, String latitude)throws IllegalArgumentException{
         if(danger > 2 | danger < 0){
-            throw new IllegalArgumentException("danger level must be between 0-2");
+            throw new IllegalArgumentException("danger level must be between 0-2; 0 = safe; 1 = warn; 2 = danger");
         }
-        String query =  insert + danger + date + location + lon + ", " + lat + terminal+ api + key;
-        System.out.println(urlString + query);
+        String query =  insert + danger + date + location + longitude + ", " + latitude + terminal;
+        System.out.println("Query " + query);
+
         try {
-            url = new URL(urlString + URLEncoder.encode(query, "UTF-8"));
-            //url = new URL(urlString + query);
-
-            PostViaURL postViaURL = new PostViaURL(urlString, query);
-
-            postViaURL.postData();
-        } catch (IOException e) {
+            CartoDBClientIF cartoDBCLient= new ApiKeyCartoDBClient("kasa288", key);
+            System.out.println(cartoDBCLient.executeQuery(query));
+        } catch (CartoDBException e) {
             e.printStackTrace();
         }
+
     }
 }
