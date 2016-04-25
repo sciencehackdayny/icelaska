@@ -35,11 +35,6 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
 
-plugins {
-    id "com.boxfuse.client" version "1.18.7.938"
-}
-
-boxfuse {
-    user='eeaed4d3fa804a2cb540f4382a28cf99'
-    secret='wvI642o142R1fRQVALu1EH9TyxOivYXIkUX0db2p8PzbQ6wC29Suut2gDPnWPgsp'
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
 }

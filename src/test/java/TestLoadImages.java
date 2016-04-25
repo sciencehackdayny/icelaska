@@ -1,4 +1,4 @@
-import Control.extData.LoadImages;
+import icelaska.Control.extData.LoadImages;
 
 /**
  * @author Jaya Kasa

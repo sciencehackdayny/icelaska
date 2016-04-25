@@ -1,4 +1,4 @@
-import Control.CartoDB.InsertCarto;
+import icelaska.Control.CartoDB.InsertCarto;
 
 /**
  * @author Jaya Kasa

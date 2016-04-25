@@ -1,4 +1,4 @@
-package Control.CartoDB;
+package icelaska.Control.CartoDB;
 
 import Util.PostViaURL;
 
