@@ -1,0 +1,43 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.sciencehackdayny.icelaska"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "com.sciencehackdayny.icelaska"
+        },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "com.sciencehackdayny.icelaska"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.sciencehackdayny.icelaska"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.sciencehackdayny.icelaska"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.sciencehackdayny.icelaska"
+        },
+        "cordova-plugin-shake": {
+            "PACKAGE_NAME": "com.sciencehackdayny.icelaska"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.sciencehackdayny.icelaska"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "com.sciencehackdayny.icelaska"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.sciencehackdayny.icelaska"
+        }
+    }
+}
