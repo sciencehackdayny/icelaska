@@ -15,8 +15,9 @@ We have built the app to have a minimal user interface and minimize the amount o
 
 ## INSTRUCTIONS (APP)
 1. Install [Apache Cordova CLI](https://cordova.apache.org/docs/en/latest/guide/cli/index.html#installing-the-cordova-cli).
-2. Inside 'app/icelaska', run ```cordova build <platform>``` where <platform> is ios or android.
-3. Connect iOS or Android device and run ```cordova run <platform>```.
+2. Open the 'app/icelaska' directory in your terminal and add the platform you want to build for, e.g. ```cordova add platform ios```
+3. Run ```cordova build <platform>```
+3. Connect device and run ```cordova run <platform>```.
 
 ## EXTERNAL LINKS
 * [CartoDB](http://www.cartodb.com)
