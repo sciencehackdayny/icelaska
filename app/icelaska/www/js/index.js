@@ -10,9 +10,7 @@ var app = {
         navigator.geolocation.getCurrentPosition(locationDetected);
         var watchGPS = navigator.geolocation.watchPosition(locationUpdated);
         var watchCompass = navigator.compass.watchHeading(compassSuccess);
-        //var watchAcceleration = navigator.accelerometer.watchAcceleration(accelerometerSuccess, null, {frequency: 1000});
         shake.startWatch(onShake, 20);
-
         initPanels();
     }
 };
@@ -33,29 +31,12 @@ var compassSuccess = function(heading){
     $('#compass').text(degToCard(heading.magneticHeading));
 }
 
-/* var accelerometerSuccess = function(acceleration){
-   console.log('Acceleration X: ' + acceleration.x + '\n' +
-          'Acceleration Y: ' + acceleration.y + '\n' +
-          'Acceleration Z: ' + acceleration.z + '\n' +
-          'Timestamp: '      + acceleration.timestamp + '\n'); 
-
-    if (acceleration.y < -1){
-        console.log("up");
-        window.scrollBy(9,scrolly*100);
-    }
-
-    if (acceleration.y > 9){
-        console.log("down");
-        window.scrollBy(0,scrolly*20);
-    }
-} */
-
 var onShake = function () {
-    console.log("Shake detected.");
     switchPanel();
 };
 
 function initPanels(){
+    cartodb.createVis('map', 'http://documentation.cartodb.com/api/v2/viz/2b13c956-e7c1-11e2-806b-5404a6a683d5/viz.json');
     $('#panel-1').show();
     $('#panel-2').hide();
     $('#panel-3').hide();
@@ -110,7 +91,6 @@ function updateWeatherDisplay(){
 }
 
 function updateCoords(position){
-    console.log('Updating Coordinates...');
     latitude = position.coords.latitude;
     longitude = position.coords.longitude
     $('#latitude').text(latitude);
